@@ -46,6 +46,37 @@
                     debugger;
 
                     // write me! (... without using cloneNode, that's kind of cheating)
+                    // Create the necessary DOM elements to match the "expected" div
+                const h2El = document.createElement('h2');
+                h2El.innerText = 'a list of things';
+
+                const ulEl = document.createElement('ul');
+                ulEl.setAttribute('start', '0');
+
+                const liRobots = document.createElement('li');
+                liRobots.innerText = 'robots';
+
+                const liSolarSystems = document.createElement('li');
+                liSolarSystems.innerText = 'solar systems';
+
+                const liBadgers = document.createElement('li');
+                const aBadgers = document.createElement('a');
+                aBadgers.href = 'https://www.badgerbadgerbadger.com';
+                aBadgers.setAttribute('expected', '_blank');
+                aBadgers.innerText = 'learn about badgers';
+                liBadgers.appendChild(aBadgers);
+
+                const liOil = document.createElement('li');
+                liOil.innerText = 'oil';
+
+                // Append the elements to the "actual" div in the correct order
+                const actualDiv = document.getElementById('actual');
+                actualDiv.appendChild(h2El);
+                actualDiv.appendChild(ulEl);
+                ulEl.appendChild(liRobots);
+                ulEl.appendChild(liSolarSystems);
+                ulEl.appendChild(liBadgers);
+                ulEl.appendChild(liOil);
                 </script>
             </div>
 

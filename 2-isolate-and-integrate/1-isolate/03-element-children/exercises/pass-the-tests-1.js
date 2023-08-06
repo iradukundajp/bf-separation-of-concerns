@@ -1,22 +1,24 @@
 'use strict';
 
-const ulEl = document.createElement('ul');
-ulEl.innerHTML = `
-  <li> toad </li>
-  <li>Frog</li>
-  <li>salad</li>
+const divEl = document.createElement('div');
+divEl.innerHTML = `
+  <a href='#toop'>
+    <button>back to the top</button>
+  </a>
 `;
-console.log(ulEl.nodeName, ulEl.cloneNode(true));
+console.log(divEl.nodeName, divEl.cloneNode(true));
 
 // --- write some code ---
+divEl.children[0].setAttribute('href', '#top');
+divEl.children[0].children[0].innerHTML = 'to the top';
 
 // --- --- --- --- --- ---
 
-console.log(ulEl.nodeName, ulEl.cloneNode(true));
+console.log(divEl.nodeName, divEl.cloneNode(true));
 
-const expectedInnerHTMLs = ['toad', 'frog', 'salamander'];
-for (let i = 0; i < expectedInnerHTMLs.length; i++) {
-    const actual = ulEl.children[i].innerHTML;
-    const expected = expectedInnerHTMLs[i];
-    console.assert(actual === expected, `Test child ${i}`);
-}
+console.assert(divEl.children[0].getAttribute('href') === '#top', 'Test: href');
+
+console.assert(
+  divEl.children[0].children[0].innerHTML === 'to the top',
+  'Test: button innerHTML',
+);

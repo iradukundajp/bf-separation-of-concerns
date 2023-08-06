@@ -19,7 +19,16 @@ console.log(divEl.nodeName, divEl.cloneNode(true));
 
 // --- write some code ---
 //  you will need to access and update each <td> element
+const updatedInnerHTMLs = ['a', 'b', 'c', 'd'];
+let index = 0;
 
+const tbodyEl = divEl.querySelector('tbody');
+const tdEls = tbodyEl.querySelectorAll('td');
+
+for (const tdEl of tdEls) {
+  tdEl.innerHTML = updatedInnerHTMLs[index];
+  index++;
+}
 // --- --- --- --- --- ---
 
 console.log(divEl.nodeName, divEl.cloneNode(true));

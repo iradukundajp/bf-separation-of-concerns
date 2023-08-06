@@ -9,7 +9,11 @@ divEl.innerHTML = `
 console.log(divEl.nodeName, divEl.cloneNode(true));
 
 // --- write some code ---
+const aEl = divEl.children[0];
+aEl.setAttribute('href', '#top');
 
+const buttonEl = aEl.children[0];
+buttonEl.innerHTML = 'to the top';
 // --- --- --- --- --- ---
 
 console.log(divEl.nodeName, divEl.cloneNode(true));

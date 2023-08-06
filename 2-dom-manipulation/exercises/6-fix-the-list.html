@@ -45,7 +45,30 @@
                     'use strict';
                     debugger;
 
-                    // write me! (... without using cloneNode, that's kind of cheating)
+            
+                // Update the h1 element's innerText
+                const h1El = document.createElement('h1');
+                h1El.innerText = 'a list of things';
+                document.getElementById('actual').prepend(h1El);
+
+                // Update the second list item text
+                const actualList = document.getElementById('actual').querySelector('ol');
+                const secondListItem = actualList.querySelector('li:nth-child(2)');
+                secondListItem.innerText = 'solar systems';
+
+                // Remove the last "oil" item from the list
+                const oilItems = actualList.querySelectorAll('li');
+                const lastOilItem = oilItems[oilItems.length - 1];
+                lastOilItem.parentNode.removeChild(lastOilItem);
+
+                // Update the first and third list item texts to match the "expected" div
+                const expectedItems = document.getElementById('expected').querySelectorAll('li');
+                const actualItems = actualList.querySelectorAll('li');
+
+                for (let i = 0; i < expectedItems.length; i++) {
+                    actualItems[i].innerText = expectedItems[i].innerText;
+                }
+
                 </script>
             </div>
 

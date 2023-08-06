@@ -46,6 +46,9 @@
                     debugger;
 
                     // write me! (... without using cloneNode, that's kind of cheating)
+                    const actualList = document.getElementById('actual').querySelector('ul');
+                    const firstListItem = actualList.querySelector('li:first-child');
+                    firstListItem.innerText = 'robots';
                 </script>
             </div>
 
